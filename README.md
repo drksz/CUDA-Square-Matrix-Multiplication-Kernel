@@ -1,8 +1,11 @@
 # SIMPLE SQUARE MATRIX MULTIPLICATION KERNEL IN CUDA-C
-As the title says, this program simply computes for the product matrix of two input square matrices written in CUDA-C; an extension of ANSI-C with NVidia CUDA GPU computing capabilities. 
+As the title says, this program simply computes for the product matrix of two input square matrices written in CUDA-C; an extension of ANSI C for general-purpose programming on CUDA-enabled NVidia GPUs.
 
 Though the program uses the **CPU** _(Host)_ for the majority of the tasks, such as scanning input matrices matrix memory allocation, the **GPU** _(Device)_ does most of the heavy-lifting. That is, it performs the matrix multiplication via a **kernel** invocation which launches a large number of threads.
 
+
+### PREREQUISITES
+In order to compile and run this program, you need to have a CUDA-enabled NVidia GPU as well as the NVidia CUDA toolkit installed.
 
 ## Why on the GPU?
 The idea behind the choice is simple. A product matrix is composed of all of the dot products for each row and column pair of two input matrices. A CPU is actually capable of performing these series of calculations. But for matrices with larger dimensions, it becomes inefficient
