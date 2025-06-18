@@ -44,7 +44,7 @@ on a single block may affect warp scheduling, induce pressure on shared memory, 
 Now, for a 16x16 thread block, we would need a 63x63 grid. This gives 63 x 63 = 3969 thread blocks, and 16 x 16 = 256 threads per block. So 3969 x 256 = 1016064 total threads to calculate each product matrix element.
 
 The problem, however, only needs exactly 1 000 000 threads. Though there is a way to launch an exact number of threads, it is not feasible to do so as CUDA prefers thread blocks with a size that is a multiple of 32 (standard warp size). Also, you would want maximize occupancy
-of the GPU and thread grids align with memory access patterns. So, with the current setup, there will be 16064 threads wasted but this is okay since GPU's focus on throughput rather than per-thread efficiency. 
+of the GPU and thread grids align with memory access patterns. So, with the current setup, there will be 16064 threads wasted but this is okay (in this case, at least) since GPU's focus on throughput rather than per-thread efficiency. 
 
 
 
