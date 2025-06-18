@@ -58,5 +58,5 @@ of the GPU and thread grids align with memory access patterns. So, with the curr
 
 
 
-More information can be found within the code. As of now, the kernel uses the naive approach in accessing global memory. That is, techniques such as memory coalescing are not currently implemented. 
+More information can be found within the code. As of now, the kernel uses the naive approach in accessing global memory. That is, techniques such as shared memory are not currently implemented. 
 
