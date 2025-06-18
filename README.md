@@ -21,7 +21,7 @@ The idea behind the choice is simple. A product matrix is composed of all of the
 and slow. This is where we leverage the GPU's computing prowess.
 
 A GPU uses threads to perform a computation. Unlike CPUs, which normally do work sequentially, GPUs excel at parallel computations and high throughput allowing them to perform computational workloads at a significantly faster rate. This is due to the fact that most of the
-chip area on a GPU is composed of massively large amounts of slower cores. In contrast, CPU chip area is dedicated to fewer, more powerful cores and larger cache memory.
+chip area on a GPU is composed of massively large amounts of slower cores. In contrast, CPU chip area is dedicated to fewer, more powerful cores and larger cache memory for lower latency.
 
 Each individual element of the product matrix can be represented and calculated using a thread. So, if we are to multiply two M x M matrices, we would need M x M threads to represent each element of the product. Using the GPU for this computational task also makes sense because
 it is highly parallelizable. That is, computing the dot product between a row and column of the two matrices, regardless of the order of which we select which row-col pair comes first, will not affect the final result as the dot products do not depend on each other.
