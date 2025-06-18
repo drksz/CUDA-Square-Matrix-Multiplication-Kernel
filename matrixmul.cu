@@ -21,7 +21,7 @@ int main()
     // Initialize matrices M, N, and P with dimensions 1000 x 1000
     // Note that the matrices are in row-major order instead of
     // explicit multi-dimensional array declaration for easier memory
-    // offset calculation.
+    // offset calculation and coalesced memory access pattern.
     float* matrix_M = (float*)malloc(1000*1000 * sizeof(float));
     float* matrix_N = (float*)malloc(1000*1000 * sizeof(float));
     float* matrix_P = (float*)malloc(1000*1000 * sizeof(float));
