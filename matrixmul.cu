@@ -18,6 +18,10 @@ int main()
         return 1;
     }
 
+    // Initialize matrices M, N, and P with dimensions 1000 x 1000
+    // Note that the matrices are in row-major order instead of
+    // explicit multi-dimensional array declaration for easier memory
+    // offset calculation.
     float* matrix_M = (float*)malloc(1000*1000 * sizeof(float));
     float* matrix_N = (float*)malloc(1000*1000 * sizeof(float));
     float* matrix_P = (float*)malloc(1000*1000 * sizeof(float));
@@ -31,12 +35,15 @@ int main()
 
     float execTime;
 
+    //call to function matrixMult()
     matrixMult(matrix_M, matrix_N, matrix_P, 1000, &execTime);
 
     printMatrix(matrix_P, 1000);
 
+    //prints multiplication kernel execution elapsed time
     printf("Matrix multiplication took %.6f seconds.\n\n", execTime/1000.0f);
 
+    //frees dynamically allocated memory on the host side and closes the input files
     free(matrix_M);
     free(matrix_N);
     free(matrix_P);
