@@ -24,7 +24,7 @@ void printMatrix(float* matrix, int width) {
 void scanInputMatrix(FILE* mat_src_A, FILE* mat_src_B, float* matrix_A, float* matrix_B, int width) {
 
     int i = 0;
-    while (i < (1000*1000) && fscanf(mat_src_A, "%f", &matrix_A[i]) && 
+    while (i < (width*width) && fscanf(mat_src_A, "%f", &matrix_A[i]) && 
             fscanf(mat_src_B, "%f", &matrix_B[i])) 
         {i++;}
 
