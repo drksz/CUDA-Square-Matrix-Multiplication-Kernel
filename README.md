@@ -4,8 +4,17 @@ As the title says, this program simply computes for the product matrix of two in
 Though the program uses the **CPU** _(Host)_ for the majority of the tasks, such as scanning input matrices matrix memory allocation, the **GPU** _(Device)_ does most of the heavy-lifting. That is, it performs the matrix multiplication via a **kernel** invocation which launches a large number of threads.
 
 
-### PREREQUISITES
+### PREREQUISITES AND HOW TO RUN
 In order to compile and run this program, you need to have a CUDA-enabled NVidia GPU as well as the NVidia CUDA toolkit installed.
+
+To compile this program, navigate to the working directory and use _nvcc_ :
+```
+ nvcc <file1.cu> <file2.cu> <..> -o <output.exe>
+```
+To run the program, do so like how any C/C++ program is usually ran :
+```
+ ./output.exe
+```
 
 ## Why on the GPU?
 The idea behind the choice is simple. A product matrix is composed of all of the dot products for each row and column pair of two input matrices. A CPU is actually capable of performing these series of calculations. But for matrices with larger dimensions, it becomes inefficient
